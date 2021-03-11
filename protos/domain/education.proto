@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package protos.domain;
+
+option go_package = "github.com/wanpng/job-seekers-grpc/grpc/domain";
+
+message Education {
+    string education_id = 1;
+    string school = 2;
+    string field_of_study = 3;
+    string description = 4;
+}
+
+message JobseekerEducation {
+    string id = 1;
+    repeated Education educations = 2;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package protos.domain;
+
+option go_package = "github.com/wanpng/job-seekers-grpc/grpc/domain";
+
+message WorkExperience {
+    string work_experience_id = 1;
+    string job_title = 2;
+    string company = 3;
+    string description = 4;
+    bool is_current_work = 5;
+    int32 from_month = 6;
+    int32 from_year = 7;
+    int32 to_month = 8;
+    int32 to_year = 9;
+    int32 duration = 10;
+}
+
+message JobseekerWorkExperience {
+    string id = 1;
+    repeated WorkExperience work_experiences = 2;
+}

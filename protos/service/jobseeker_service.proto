@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package protos.service;
+
+option go_package = "github.com/wanpng/job-seekers-grpc/grpc/service";
+
+import "protos/domain/jobseeker.proto";
+
+service JobseeekerService {
+    rpc GetJobseekers(GetJobseekersRequest) returns (GetJobseekersResponse);
+}
+
+message GetJobseekersRequest {
+    repeated string jobseeker_ids = 1;
+}
+
+message GetJobseekersResponse {
+    repeated protos.domain.Jobseeker jobseekers = 1; 
+}

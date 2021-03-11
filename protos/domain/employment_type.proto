@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package protos.domain;
+
+option go_package = "github.com/wanpng/job-seekers-grpc/grpc/domain";
+
+message EmploymentType {
+    int32 employment_type_id = 1;
+    string employment_type = 2;
+}
