@@ -4,11 +4,11 @@ package protos.domain;
 
 option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/domain";
 
-import "protos/domain/employment_type.proto";
-import "protos/domain/skill.proto";
-import "protos/domain/education.proto";
-import "protos/domain/work_experience.proto";
-import "protos/domain/training.proto";
+import "protos/domain/employment_type.grpc.proto";
+import "protos/domain/skill.grpc.proto";
+import "protos/domain/education.grpc.proto";
+import "protos/domain/work_experience.grpc.proto";
+import "protos/domain/training.grpc.proto";
 
 message Jobseeker {
     // @inject_tag: json:"id" gorm:"column:job_seeker_id;primary_key;"

@@ -97,5 +97,5 @@ var JobseeekerService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "protos/service/jobseeker_service.proto",
+	Metadata: "protos/service/jobseeker_service.grpc.proto",
 }

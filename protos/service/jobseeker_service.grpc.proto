@@ -4,7 +4,7 @@ package protos.service;
 
 option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/service";
 
-import "protos/domain/jobseeker.proto";
+import "protos/domain/jobseeker.grpc.proto";
 
 service JobseeekerService {
     rpc GetJobseekers(GetJobseekersRequest) returns (GetJobseekersResponse);

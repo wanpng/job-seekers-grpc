@@ -1,10 +1,10 @@
 protoc --go_out=$GOPATH/src protos/domain/*.proto
-protoc-go-inject-tag -input=grpc/domain/jobseeker.pb.go
-protoc-go-inject-tag -input=grpc/domain/employment_type.pb.go
-protoc-go-inject-tag -input=grpc/domain/skill.pb.go
-protoc-go-inject-tag -input=grpc/domain/education.pb.go
-protoc-go-inject-tag -input=grpc/domain/training.pb.go
-protoc-go-inject-tag -input=grpc/domain/work_experience.pb.go
+protoc-go-inject-tag -input=grpc/domain/jobseeker.grpc.pb.go
+protoc-go-inject-tag -input=grpc/domain/employment_type.grpc.pb.go
+protoc-go-inject-tag -input=grpc/domain/skill.grpc.pb.go
+protoc-go-inject-tag -input=grpc/domain/education.grpc.pb.go
+protoc-go-inject-tag -input=grpc/domain/training.grpc.pb.go
+protoc-go-inject-tag -input=grpc/domain/work_experience.grpc.pb.go
 
 protoc --go_out=$GOPATH/src protos/service/*.proto
 
