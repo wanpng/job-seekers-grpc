@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package protos.domain;
 
-option go_package = "github.com/wanpng/job-seekers-grpc/grpc/domain";
+option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/domain";
 
 message Education {
     string education_id = 1;

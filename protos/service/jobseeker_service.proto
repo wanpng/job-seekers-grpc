@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package protos.service;
 
-option go_package = "github.com/wanpng/job-seekers-grpc/grpc/service";
+option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/service";
 
 import "protos/domain/jobseeker.proto";
 
