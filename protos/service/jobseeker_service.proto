@@ -10,8 +10,20 @@ service JobseeekerService {
     rpc GetJobseekers(GetJobseekersRequest) returns (GetJobseekersResponse);
 }
 
+enum ApplicationStatus {
+    APPLIED = 0;
+    REVIEWING = 1;
+    INTERVIEWING = 2;
+    SHORTLIST = 3;
+    OFFERING = 4;
+    HIRED = 5;
+    NOT_SELECTED = 6;
+    WITHDRAW = 7;
+}
+
 message GetJobseekersRequest {
-    repeated string jobseeker_ids = 1;
+    ApplicationStatus application_status = 1;
+    repeated string jobseeker_ids = 2;
 }
 
 message GetJobseekersResponse {
