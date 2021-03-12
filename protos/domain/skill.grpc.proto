@@ -19,7 +19,7 @@ message SkillGrpc {
     string level = 6;
 }
 
-message JobseekerSkill {
+message JobseekerSkillGrpc {
     string id = 1;
     repeated SkillGrpc skills = 2;
 }

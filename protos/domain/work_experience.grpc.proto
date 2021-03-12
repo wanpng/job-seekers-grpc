@@ -25,7 +25,7 @@ message WorkExperienceGrpc {
     int32 to_year = 9;
 }
 
-message JobseekerWorkExperience {
+message JobseekerWorkExperienceGrpc {
     string id = 1;
     repeated WorkExperienceGrpc work_experiences = 2;
 }

@@ -17,7 +17,7 @@ message EducationGrpc {
     string description = 5;
 }
 
-message JobseekerEducation {
+message JobseekerEducationGrpc {
     string id = 1;
     repeated EducationGrpc educations = 2;
 }
