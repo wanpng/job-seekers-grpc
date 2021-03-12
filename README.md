@@ -1,1 +1,1 @@
-# job-seekers-grpc
+# job-seekers-profile-grpc
