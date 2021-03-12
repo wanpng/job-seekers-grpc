@@ -25,19 +25,31 @@ type Jobseeker struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id              string            `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	FirstName       string            `protobuf:"bytes,2,opt,name=first_name,json=firstName,proto3" json:"first_name,omitempty"`
-	LastName        string            `protobuf:"bytes,3,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
-	PhotoUrl        string            `protobuf:"bytes,4,opt,name=photo_url,json=photoUrl,proto3" json:"photo_url,omitempty"`
-	IsLandOwner     bool              `protobuf:"varint,5,opt,name=is_land_owner,json=isLandOwner,proto3" json:"is_land_owner,omitempty"`
-	CareerLevelId   int32             `protobuf:"varint,6,opt,name=career_level_id,json=careerLevelId,proto3" json:"career_level_id,omitempty"`
-	CareerLevel     string            `protobuf:"bytes,7,opt,name=career_level,json=careerLevel,proto3" json:"career_level,omitempty"`
-	Summary         string            `protobuf:"bytes,8,opt,name=summary,proto3" json:"summary,omitempty"`
-	ProvinceId      int32             `protobuf:"varint,9,opt,name=province_id,json=provinceId,proto3" json:"province_id,omitempty"`
-	Province        string            `protobuf:"bytes,10,opt,name=province,proto3" json:"province,omitempty"`
+	// @inject_tag: json:"id" gorm:"column:job_seeker_id;primary_key;"
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id" gorm:"column:job_seeker_id;primary_key;"`
+	// @inject_tag: json:"firstName" gorm:"column:first_name;"
+	FirstName string `protobuf:"bytes,2,opt,name=first_name,json=firstName,proto3" json:"firstName" gorm:"column:first_name;"`
+	// @inject_tag: json:"lastName" gorm:"column:last_name;"
+	LastName string `protobuf:"bytes,3,opt,name=last_name,json=lastName,proto3" json:"lastName" gorm:"column:last_name;"`
+	// @inject_tag: json:"photoUrl" gorm:"column:photo_url;"
+	PhotoUrl string `protobuf:"bytes,4,opt,name=photo_url,json=photoUrl,proto3" json:"photoUrl" gorm:"column:photo_url;"`
+	// @inject_tag: json:"isLandOwner" gorm:"column:is_land_owner;"
+	IsLandOwner bool `protobuf:"varint,5,opt,name=is_land_owner,json=isLandOwner,proto3" json:"isLandOwner" gorm:"column:is_land_owner;"`
+	// @inject_tag: json:"careerLevelId" gorm:"column:career_level_id;"
+	CareerLevelId int32 `protobuf:"varint,6,opt,name=career_level_id,json=careerLevelId,proto3" json:"careerLevelId" gorm:"column:career_level_id;"`
+	// @inject_tag: json:"careerLevel" gorm:"column:career_level;"
+	CareerLevel string `protobuf:"bytes,7,opt,name=career_level,json=careerLevel,proto3" json:"careerLevel" gorm:"column:career_level;"`
+	// @inject_tag: json:"summary" gorm:"column:summary;"
+	Summary string `protobuf:"bytes,8,opt,name=summary,proto3" json:"summary" gorm:"column:summary;"`
+	// @inject_tag: json:"provinceId" gorm:"column:province_id;"
+	ProvinceId int32 `protobuf:"varint,9,opt,name=province_id,json=provinceId,proto3" json:"provinceId" gorm:"column:province_id;"`
+	// @inject_tag: json:"province" gorm:"column:province;"
+	Province        string            `protobuf:"bytes,10,opt,name=province,proto3" json:"province" gorm:"column:province;"`
 	EmploymentTypes []*EmploymentType `protobuf:"bytes,11,rep,name=employment_types,json=employmentTypes,proto3" json:"employment_types,omitempty"`
-	AvailabilityId  int32             `protobuf:"varint,12,opt,name=availability_id,json=availabilityId,proto3" json:"availability_id,omitempty"`
-	Availability    string            `protobuf:"bytes,13,opt,name=availability,proto3" json:"availability,omitempty"`
+	// @inject_tag: json:"availabilityId" gorm:"column:availability_id;"
+	AvailabilityId int32 `protobuf:"varint,12,opt,name=availability_id,json=availabilityId,proto3" json:"availabilityId" gorm:"column:availability_id;"`
+	// @inject_tag: json:"availability" gorm:"column:availability;"
+	Availability    string            `protobuf:"bytes,13,opt,name=availability,proto3" json:"availability" gorm:"column:availability;"`
 	Skills          []*Skill          `protobuf:"bytes,14,rep,name=skills,proto3" json:"skills,omitempty"`
 	Educations      []*Education      `protobuf:"bytes,15,rep,name=educations,proto3" json:"educations,omitempty"`
 	WorkExperiences []*WorkExperience `protobuf:"bytes,16,rep,name=work_experiences,json=workExperiences,proto3" json:"work_experiences,omitempty"`

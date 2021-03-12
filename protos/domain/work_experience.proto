@@ -5,16 +5,24 @@ package protos.domain;
 option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/domain";
 
 message WorkExperience {
+    // @inject_tag: json:"id" gorm:"column:work_experience_id;primary_key;"
     string work_experience_id = 1;
+    // @inject_tag: json:"jobTitle" gorm:"column:job_title;"
     string job_title = 2;
+    // @inject_tag: json:"company" gorm:"column:company;"
     string company = 3;
+    // @inject_tag: json:"description" gorm:"column:description;"
     string description = 4;
+    // @inject_tag: json:"isCurrentWork" gorm:"column:is_current_work;"
     bool is_current_work = 5;
+    // @inject_tag: json:"fromMonthNumber" gorm:"column:from_month_number"
     int32 from_month = 6;
+    // @inject_tag: json:"fromYear" gorm:"column:from_year;"
     int32 from_year = 7;
+    // @inject_tag: json:"toMonthNumber" gorm:"column:to_month_number;"
     int32 to_month = 8;
+    // @inject_tag: json:"toYear" gorm:"column:to_year;"
     int32 to_year = 9;
-    int32 duration = 10;
 }
 
 message JobseekerWorkExperience {

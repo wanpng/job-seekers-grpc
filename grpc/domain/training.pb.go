@@ -25,10 +25,14 @@ type Training struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	TrainingId  string `protobuf:"bytes,1,opt,name=training_id,json=trainingId,proto3" json:"training_id,omitempty"`
-	Institution string `protobuf:"bytes,2,opt,name=institution,proto3" json:"institution,omitempty"`
-	Training    string `protobuf:"bytes,3,opt,name=training,proto3" json:"training,omitempty"`
-	Description string `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	// @inject_tag: json:"id" gorm:"column:training_id;primary_key;"
+	TrainingId string `protobuf:"bytes,1,opt,name=training_id,json=trainingId,proto3" json:"id" gorm:"column:training_id;primary_key;"`
+	// @inject_tag: json:"institution" gorm:"column:institution;"
+	Institution string `protobuf:"bytes,2,opt,name=institution,proto3" json:"institution" gorm:"column:institution;"`
+	// @inject_tag: json:"training" gorm:"column:training;"
+	Training string `protobuf:"bytes,3,opt,name=training,proto3" json:"training" gorm:"column:training;"`
+	// @inject_tag: json:"description" gorm:"column:description;"
+	Description string `protobuf:"bytes,4,opt,name=description,proto3" json:"description" gorm:"column:description;"`
 }
 
 func (x *Training) Reset() {

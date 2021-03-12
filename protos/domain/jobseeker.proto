@@ -11,18 +11,30 @@ import "protos/domain/work_experience.proto";
 import "protos/domain/training.proto";
 
 message Jobseeker {
+    // @inject_tag: json:"id" gorm:"column:job_seeker_id;primary_key;"
     string id = 1;
+    // @inject_tag: json:"firstName" gorm:"column:first_name;"
     string first_name = 2;
+    // @inject_tag: json:"lastName" gorm:"column:last_name;"
     string last_name = 3;
+    // @inject_tag: json:"photoUrl" gorm:"column:photo_url;"
     string photo_url = 4;
+    // @inject_tag: json:"isLandOwner" gorm:"column:is_land_owner;"
     bool is_land_owner = 5;
+    // @inject_tag: json:"careerLevelId" gorm:"column:career_level_id;"
     int32 career_level_id = 6;
+    // @inject_tag: json:"careerLevel" gorm:"column:career_level;"
     string career_level = 7;
+    // @inject_tag: json:"summary" gorm:"column:summary;"
     string summary = 8;
+    // @inject_tag: json:"provinceId" gorm:"column:province_id;"
     int32 province_id = 9;
+    // @inject_tag: json:"province" gorm:"column:province;"
     string province = 10;
     repeated protos.domain.EmploymentType employment_types = 11;
+    // @inject_tag: json:"availabilityId" gorm:"column:availability_id;"
     int32 availability_id = 12;
+    // @inject_tag: json:"availability" gorm:"column:availability;"
     string availability = 13;
     repeated protos.domain.Skill skills = 14;
     repeated protos.domain.Education educations = 15;

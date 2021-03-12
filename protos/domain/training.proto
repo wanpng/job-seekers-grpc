@@ -5,9 +5,13 @@ package protos.domain;
 option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/domain";
 
 message Training {
+    // @inject_tag: json:"id" gorm:"column:training_id;primary_key;"
     string training_id = 1;
+    // @inject_tag: json:"institution" gorm:"column:institution;"
     string institution = 2;
+    // @inject_tag: json:"training" gorm:"column:training;"
     string training = 3;
+    // @inject_tag: json:"description" gorm:"column:description;"
     string description = 4;
 }
 

@@ -5,10 +5,18 @@ package protos.domain;
 option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/domain";
 
 message Skill {
-    string skill_id = 1;
-    string skill = 2;
-    int32 level_id = 3;
-    string level = 4;
+    // @inject_tag: json:"id" gorm:"column:job_seeker_skill_id;primary_key;"
+    string id = 1;
+    // @inject_tag: json:"jobSeekerId" gorm:"column:job_seeker_id;"
+    string job_seeker_id = 2;
+    // @inject_tag: json:"skillId" gorm:"column:skill_id;"
+    string skill_id = 3;
+    // @inject_tag: json:"skill" gorm:"column:skill;"
+    string skill = 4;
+    // @inject_tag: json:"levelId" gorm:"column:level_id;"
+    int32 level_id = 5;
+    // @inject_tag: json:"level" gorm:"column:level;"
+    string level = 6;
 }
 
 message JobseekerSkill {
