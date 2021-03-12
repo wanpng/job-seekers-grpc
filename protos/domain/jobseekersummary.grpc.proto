@@ -4,7 +4,7 @@ package protos.domain;
 
 option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/domain";
 
-message JobseekerSummary {
+message JobseekerSummaryGrpc {
     string id = 1;
     string summary = 2;
 }

@@ -27,5 +27,5 @@ message GetJobseekersRequest {
 }
 
 message GetJobseekersResponse {
-    repeated protos.domain.Jobseeker jobseekers = 1; 
+    repeated protos.domain.JobseekerGrpc jobseekers = 1; 
 }

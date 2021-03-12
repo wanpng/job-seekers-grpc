@@ -10,7 +10,7 @@ import "protos/domain/education.grpc.proto";
 import "protos/domain/work_experience.grpc.proto";
 import "protos/domain/training.grpc.proto";
 
-message Jobseeker {
+message JobseekerGrpc {
     // @inject_tag: json:"id" gorm:"column:job_seeker_id;primary_key;"
     string id = 1;
     // @inject_tag: json:"firstName" gorm:"column:first_name;"
@@ -31,13 +31,13 @@ message Jobseeker {
     int32 province_id = 9;
     // @inject_tag: json:"province" gorm:"column:province;"
     string province = 10;
-    repeated protos.domain.EmploymentType employment_types = 11;
+    repeated protos.domain.EmploymentTypeGrpc employment_types = 11;
     // @inject_tag: json:"availabilityId" gorm:"column:availability_id;"
     int32 availability_id = 12;
     // @inject_tag: json:"availability" gorm:"column:availability;"
     string availability = 13;
-    repeated protos.domain.Skill skills = 14;
-    repeated protos.domain.Education educations = 15;
-    repeated protos.domain.WorkExperience work_experiences = 16;
-    repeated protos.domain.Training trainings = 17;
+    repeated protos.domain.SkillGrpc skills = 14;
+    repeated protos.domain.EducationGrpc educations = 15;
+    repeated protos.domain.WorkExperienceGrpc work_experiences = 16;
+    repeated protos.domain.TrainingGrpc trainings = 17;
 }

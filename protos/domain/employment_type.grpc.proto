@@ -4,7 +4,7 @@ package protos.domain;
 
 option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/domain";
 
-message EmploymentType {
+message EmploymentTypeGrpc {
     // @inject_tag: json:"id" gorm:"column:job_seeker_employment_type_id;primary_key;"
     string id = 1;
     // @inject_tag: json:"employmentTypeId" gorm:"column:employment_type_id;"

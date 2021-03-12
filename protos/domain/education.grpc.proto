@@ -4,7 +4,7 @@ package protos.domain;
 
 option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/domain";
 
-message Education {
+message EducationGrpc {
     // @inject_tag: json:"id" gorm:"column:education_id;primary_key;"
     string education_id = 1;
     // @inject_tag: json:"jobSeekerId" gorm:"column:job_seeker_id;"
@@ -19,5 +19,5 @@ message Education {
 
 message JobseekerEducation {
     string id = 1;
-    repeated Education educations = 2;
+    repeated EducationGrpc educations = 2;
 }
