@@ -49,8 +49,9 @@ type JobseekerGrpc struct {
 	// @inject_tag: json:"availabilityId" gorm:"column:availability_id;"
 	AvailabilityId int32 `protobuf:"varint,12,opt,name=availability_id,json=availabilityId,proto3" json:"availabilityId" gorm:"column:availability_id;"`
 	// @inject_tag: json:"availability" gorm:"column:availability;"
-	Availability    string                `protobuf:"bytes,13,opt,name=availability,proto3" json:"availability" gorm:"column:availability;"`
-	Skills          []*SkillGrpc          `protobuf:"bytes,14,rep,name=skills,proto3" json:"skills,omitempty"`
+	Availability string `protobuf:"bytes,13,opt,name=availability,proto3" json:"availability" gorm:"column:availability;"`
+	// @inject_tag: json:"skills" form:"foreignKey:job_seeker_id"
+	Skills          []*SkillGrpc          `protobuf:"bytes,14,rep,name=skills,proto3" json:"skills" form:"foreignKey:job_seeker_id"`
 	Educations      []*EducationGrpc      `protobuf:"bytes,15,rep,name=educations,proto3" json:"educations,omitempty"`
 	WorkExperiences []*WorkExperienceGrpc `protobuf:"bytes,16,rep,name=work_experiences,json=workExperiences,proto3" json:"work_experiences,omitempty"`
 	Trainings       []*TrainingGrpc       `protobuf:"bytes,17,rep,name=trainings,proto3" json:"trainings,omitempty"`

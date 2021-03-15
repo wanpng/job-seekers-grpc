@@ -36,6 +36,7 @@ message JobseekerGrpc {
     int32 availability_id = 12;
     // @inject_tag: json:"availability" gorm:"column:availability;"
     string availability = 13;
+    // @inject_tag: json:"skills" form:"foreignKey:job_seeker_id"
     repeated protos.domain.SkillGrpc skills = 14;
     repeated protos.domain.EducationGrpc educations = 15;
     repeated protos.domain.WorkExperienceGrpc work_experiences = 16;
