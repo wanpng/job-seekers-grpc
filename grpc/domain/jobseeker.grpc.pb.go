@@ -51,8 +51,8 @@ type JobseekerGrpc struct {
 	Availability string `protobuf:"bytes,12,opt,name=availability,proto3" json:"availability" gorm:"column:availability;"`
 	// @inject_tag: json:"skills" gorm:"foreignKey:JobSeekerId;"
 	Skills []*JobSeekerSkill `protobuf:"bytes,13,rep,name=skills,proto3" json:"skills" gorm:"foreignKey:JobSeekerId;"`
-	// @inject_tag: json:"skills" gorm:"foreignKey:JobSeekerId;"
-	EmploymentTypes []*JobSeekerEmployementType `protobuf:"bytes,14,rep,name=employment_types,json=employmentTypes,proto3" json:"skills" gorm:"foreignKey:JobSeekerId;"`
+	// @inject_tag: json:"employmentTypes" gorm:"foreignKey:JobSeekerId;"
+	EmploymentTypes []*JobSeekerEmployementType `protobuf:"bytes,14,rep,name=employment_types,json=employmentTypes,proto3" json:"employmentTypes" gorm:"foreignKey:JobSeekerId;"`
 }
 
 func (x *JobseekerGrpc) Reset() {
