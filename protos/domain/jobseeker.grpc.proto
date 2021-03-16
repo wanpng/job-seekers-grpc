@@ -35,5 +35,5 @@ message JobseekerGrpc {
     // @inject_tag: json:"skills" gorm:"foreignKey:JobSeekerId;"
     repeated protos.domain.JobSeekerSkill skills = 13;
     // @inject_tag: json:"employmentTypes" gorm:"foreignKey:JobSeekerId;"
-    repeated protos.domain.JobSeekerEmployementType employment_types = 14;
+    repeated protos.domain.JobSeekerEmploymentType employment_types = 14;
 }
