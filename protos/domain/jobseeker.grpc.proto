@@ -33,6 +33,6 @@ message JobseekerGrpc {
     int32 availability_id = 11;
     // @inject_tag: json:"availability" gorm:"column:availability;"
     string availability = 12;
-    // @inject_tag: json:"skills" gorm:"foreignKey:job_seeker_id;"
+    // @inject_tag: json:"skills" gorm:"foreignKey:JobSeekerId;"
     repeated protos.domain.JobSeekerSkill skills = 13;
 }
