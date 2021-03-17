@@ -5,9 +5,13 @@ package protos.service;
 option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/service";
 
 import "protos/domain/jobseeker.grpc.proto";
+import "protos/domain/skill.grpc.proto";
+import "protos/domain/employment_type.grpc.proto";
 
 service JobseeekerService {
     rpc GetJobseekers(GetJobseekersRequest) returns (GetJobseekersResponse);
+    rpc GetSkills(GetSkillsRequest) returns (GetSkillsResponse);
+    rpc GetEmploymentTypes(GetEmploymentTypesRequest) returns (GetEmploymentTypesResponse);
 }
 
 enum ApplicationStatus {
@@ -28,4 +32,20 @@ message GetJobseekersRequest {
 
 message GetJobseekersResponse {
     repeated protos.domain.JobseekerGrpc jobseekers = 1; 
+}
+
+message GetSkillsRequest {
+    string candidateId = 1;
+}
+
+message GetSkillsResponse {
+    repeated protos.domain.JobSeekerSkill skills = 1;
+}
+
+message GetEmploymentTypesRequest {
+    string candidateId = 1;
+}
+
+message GetEmploymentTypesResponse {
+    repeated protos.domain.JobSeekerEmploymentType employmentTypes = 1;
 }
