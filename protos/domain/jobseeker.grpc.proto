@@ -4,9 +4,6 @@ package protos.domain;
 
 option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/domain";
 
-import "protos/domain/skill.grpc.proto";
-import "protos/domain/employment_type.grpc.proto";
-
 message JobseekerGrpc {
     // @inject_tag: json:"id" gorm:"column:job_seeker_id;primary_key;"
     string id = 1;
@@ -32,8 +29,4 @@ message JobseekerGrpc {
     int32 availability_id = 11;
     // @inject_tag: json:"availability" gorm:"column:availability;"
     string availability = 12;
-    // @inject_tag: json:"skills" gorm:"foreignKey:JobSeekerId;"
-    repeated protos.domain.JobSeekerSkill skills = 13;
-    // @inject_tag: json:"employmentTypes" gorm:"foreignKey:JobSeekerId;"
-    repeated protos.domain.JobSeekerEmploymentType employment_types = 14;
 }
