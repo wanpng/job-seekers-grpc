@@ -49,7 +49,8 @@ type JobseekerGrpc struct {
 	AvailabilityId int32 `protobuf:"varint,11,opt,name=availability_id,json=availabilityId,proto3" json:"availabilityId" gorm:"column:availability_id;"`
 	// @inject_tag: json:"availability" gorm:"column:availability;"
 	Availability string `protobuf:"bytes,12,opt,name=availability,proto3" json:"availability" gorm:"column:availability;"`
-	JobTitle     string `protobuf:"bytes,13,opt,name=job_title,json=jobTitle,proto3" json:"job_title,omitempty"`
+	// @inject_tag: json:"jobTitle"
+	JobTitle string `protobuf:"bytes,13,opt,name=job_title,json=jobTitle,proto3" json:"jobTitle"`
 }
 
 func (x *JobseekerGrpc) Reset() {
