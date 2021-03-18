@@ -19,8 +19,8 @@ message JobseekerGrpc {
     int32 career_level_id = 6;
     // @inject_tag: json:"careerLevel" gorm:"column:career_level;"
     string career_level = 7;
-    // @inject_tag: json:"summary" gorm:"column:summary;"
-    string summary = 8;
+    // @inject_tag: json:"city" gorm:"column:city;"
+    string city = 8;
     // @inject_tag: json:"provinceId" gorm:"column:province_id;"
     int32 province_id = 9;
     // @inject_tag: json:"province" gorm:"column:province;"
