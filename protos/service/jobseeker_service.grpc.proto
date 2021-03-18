@@ -10,6 +10,7 @@ import "protos/domain/employment_type.grpc.proto";
 
 service JobseeekerService {
     rpc GetJobseekers(GetJobseekersRequest) returns (GetJobseekersResponse);
+    rpc GetJobseeker(GetJobSeekerRequest) returns (GetJobSeekerResponse);
     rpc GetSkills(GetSkillsRequest) returns (GetSkillsResponse);
     rpc GetEmploymentTypes(GetEmploymentTypesRequest) returns (GetEmploymentTypesResponse);
 }
@@ -23,6 +24,14 @@ enum ApplicationStatus {
     HIRED = 5;
     NOT_SELECTED = 6;
     WITHDRAW = 7;
+}
+
+message GetJobSeekerRequest {
+    string jobseeker_id = 1;
+}
+
+message GetJobSeekerResponse {
+    protos.domain.JobseekerGrpc jobseeker = 1;
 }
 
 message GetJobseekersRequest {

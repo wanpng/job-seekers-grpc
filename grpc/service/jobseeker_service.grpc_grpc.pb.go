@@ -19,6 +19,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type JobseeekerServiceClient interface {
 	GetJobseekers(ctx context.Context, in *GetJobseekersRequest, opts ...grpc.CallOption) (*GetJobseekersResponse, error)
+	GetJobseeker(ctx context.Context, in *GetJobSeekerRequest, opts ...grpc.CallOption) (*GetJobSeekerResponse, error)
 	GetSkills(ctx context.Context, in *GetSkillsRequest, opts ...grpc.CallOption) (*GetSkillsResponse, error)
 	GetEmploymentTypes(ctx context.Context, in *GetEmploymentTypesRequest, opts ...grpc.CallOption) (*GetEmploymentTypesResponse, error)
 }
@@ -34,6 +35,15 @@ func NewJobseeekerServiceClient(cc grpc.ClientConnInterface) JobseeekerServiceCl
 func (c *jobseeekerServiceClient) GetJobseekers(ctx context.Context, in *GetJobseekersRequest, opts ...grpc.CallOption) (*GetJobseekersResponse, error) {
 	out := new(GetJobseekersResponse)
 	err := c.cc.Invoke(ctx, "/protos.service.JobseeekerService/GetJobseekers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *jobseeekerServiceClient) GetJobseeker(ctx context.Context, in *GetJobSeekerRequest, opts ...grpc.CallOption) (*GetJobSeekerResponse, error) {
+	out := new(GetJobSeekerResponse)
+	err := c.cc.Invoke(ctx, "/protos.service.JobseeekerService/GetJobseeker", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -63,6 +73,7 @@ func (c *jobseeekerServiceClient) GetEmploymentTypes(ctx context.Context, in *Ge
 // for forward compatibility
 type JobseeekerServiceServer interface {
 	GetJobseekers(context.Context, *GetJobseekersRequest) (*GetJobseekersResponse, error)
+	GetJobseeker(context.Context, *GetJobSeekerRequest) (*GetJobSeekerResponse, error)
 	GetSkills(context.Context, *GetSkillsRequest) (*GetSkillsResponse, error)
 	GetEmploymentTypes(context.Context, *GetEmploymentTypesRequest) (*GetEmploymentTypesResponse, error)
 	mustEmbedUnimplementedJobseeekerServiceServer()
@@ -74,6 +85,9 @@ type UnimplementedJobseeekerServiceServer struct {
 
 func (UnimplementedJobseeekerServiceServer) GetJobseekers(context.Context, *GetJobseekersRequest) (*GetJobseekersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetJobseekers not implemented")
+}
+func (UnimplementedJobseeekerServiceServer) GetJobseeker(context.Context, *GetJobSeekerRequest) (*GetJobSeekerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetJobseeker not implemented")
 }
 func (UnimplementedJobseeekerServiceServer) GetSkills(context.Context, *GetSkillsRequest) (*GetSkillsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSkills not implemented")
@@ -108,6 +122,24 @@ func _JobseeekerService_GetJobseekers_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(JobseeekerServiceServer).GetJobseekers(ctx, req.(*GetJobseekersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _JobseeekerService_GetJobseeker_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetJobSeekerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(JobseeekerServiceServer).GetJobseeker(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/protos.service.JobseeekerService/GetJobseeker",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(JobseeekerServiceServer).GetJobseeker(ctx, req.(*GetJobSeekerRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -158,6 +190,10 @@ var JobseeekerService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetJobseekers",
 			Handler:    _JobseeekerService_GetJobseekers_Handler,
+		},
+		{
+			MethodName: "GetJobseeker",
+			Handler:    _JobseeekerService_GetJobseeker_Handler,
 		},
 		{
 			MethodName: "GetSkills",
