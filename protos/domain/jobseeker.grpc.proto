@@ -29,4 +29,5 @@ message JobseekerGrpc {
     int32 availability_id = 11;
     // @inject_tag: json:"availability" gorm:"column:availability;"
     string availability = 12;
+    string job_title = 13;
 }
