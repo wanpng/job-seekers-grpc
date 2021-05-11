@@ -22,7 +22,7 @@ type JobseeekerServiceClient interface {
 	GetJobseeker(ctx context.Context, in *GetJobSeekerRequest, opts ...grpc.CallOption) (*GetJobSeekerResponse, error)
 	GetSkills(ctx context.Context, in *GetSkillsRequest, opts ...grpc.CallOption) (*GetSkillsResponse, error)
 	GetEmploymentTypes(ctx context.Context, in *GetEmploymentTypesRequest, opts ...grpc.CallOption) (*GetEmploymentTypesResponse, error)
-	SearchJobseeker(ctx context.Context, in *SearchJobSeekerRequest, opts ...grpc.CallOption) (*SearchJobResponse, error)
+	SearchJobseeker(ctx context.Context, in *SearchJobSeekerRequest, opts ...grpc.CallOption) (*SearchJobSeekerResponse, error)
 }
 
 type jobseeekerServiceClient struct {
@@ -69,8 +69,8 @@ func (c *jobseeekerServiceClient) GetEmploymentTypes(ctx context.Context, in *Ge
 	return out, nil
 }
 
-func (c *jobseeekerServiceClient) SearchJobseeker(ctx context.Context, in *SearchJobSeekerRequest, opts ...grpc.CallOption) (*SearchJobResponse, error) {
-	out := new(SearchJobResponse)
+func (c *jobseeekerServiceClient) SearchJobseeker(ctx context.Context, in *SearchJobSeekerRequest, opts ...grpc.CallOption) (*SearchJobSeekerResponse, error) {
+	out := new(SearchJobSeekerResponse)
 	err := c.cc.Invoke(ctx, "/protos.service.JobseeekerService/SearchJobseeker", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -86,7 +86,7 @@ type JobseeekerServiceServer interface {
 	GetJobseeker(context.Context, *GetJobSeekerRequest) (*GetJobSeekerResponse, error)
 	GetSkills(context.Context, *GetSkillsRequest) (*GetSkillsResponse, error)
 	GetEmploymentTypes(context.Context, *GetEmploymentTypesRequest) (*GetEmploymentTypesResponse, error)
-	SearchJobseeker(context.Context, *SearchJobSeekerRequest) (*SearchJobResponse, error)
+	SearchJobseeker(context.Context, *SearchJobSeekerRequest) (*SearchJobSeekerResponse, error)
 	mustEmbedUnimplementedJobseeekerServiceServer()
 }
 
@@ -106,7 +106,7 @@ func (UnimplementedJobseeekerServiceServer) GetSkills(context.Context, *GetSkill
 func (UnimplementedJobseeekerServiceServer) GetEmploymentTypes(context.Context, *GetEmploymentTypesRequest) (*GetEmploymentTypesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEmploymentTypes not implemented")
 }
-func (UnimplementedJobseeekerServiceServer) SearchJobseeker(context.Context, *SearchJobSeekerRequest) (*SearchJobResponse, error) {
+func (UnimplementedJobseeekerServiceServer) SearchJobseeker(context.Context, *SearchJobSeekerRequest) (*SearchJobSeekerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SearchJobseeker not implemented")
 }
 func (UnimplementedJobseeekerServiceServer) mustEmbedUnimplementedJobseeekerServiceServer() {}

@@ -13,7 +13,7 @@ service JobseeekerService {
     rpc GetJobseeker(GetJobSeekerRequest) returns (GetJobSeekerResponse);
     rpc GetSkills(GetSkillsRequest) returns (GetSkillsResponse);
     rpc GetEmploymentTypes(GetEmploymentTypesRequest) returns (GetEmploymentTypesResponse);
-    rpc SearchJobseeker(SearchJobSeekerRequest) returns (SearchJobResponse);
+    rpc SearchJobseeker(SearchJobSeekerRequest) returns (SearchJobSeekerResponse);
 }
 
 enum ApplicationStatus {
@@ -65,6 +65,6 @@ message SearchJobSeekerRequest {
     string keyword = 2;
 }
 
-message SearchJobResponse {
+message SearchJobSeekerResponse {
     repeated string jobseeker_ids = 1;
 }
