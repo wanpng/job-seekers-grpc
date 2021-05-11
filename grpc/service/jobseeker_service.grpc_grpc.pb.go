@@ -22,6 +22,7 @@ type JobseeekerServiceClient interface {
 	GetJobseeker(ctx context.Context, in *GetJobSeekerRequest, opts ...grpc.CallOption) (*GetJobSeekerResponse, error)
 	GetSkills(ctx context.Context, in *GetSkillsRequest, opts ...grpc.CallOption) (*GetSkillsResponse, error)
 	GetEmploymentTypes(ctx context.Context, in *GetEmploymentTypesRequest, opts ...grpc.CallOption) (*GetEmploymentTypesResponse, error)
+	SearchJobseeker(ctx context.Context, in *SearchJobSeekerRequest, opts ...grpc.CallOption) (*SearchJobResponse, error)
 }
 
 type jobseeekerServiceClient struct {
@@ -68,6 +69,15 @@ func (c *jobseeekerServiceClient) GetEmploymentTypes(ctx context.Context, in *Ge
 	return out, nil
 }
 
+func (c *jobseeekerServiceClient) SearchJobseeker(ctx context.Context, in *SearchJobSeekerRequest, opts ...grpc.CallOption) (*SearchJobResponse, error) {
+	out := new(SearchJobResponse)
+	err := c.cc.Invoke(ctx, "/protos.service.JobseeekerService/SearchJobseeker", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // JobseeekerServiceServer is the server API for JobseeekerService service.
 // All implementations must embed UnimplementedJobseeekerServiceServer
 // for forward compatibility
@@ -76,6 +86,7 @@ type JobseeekerServiceServer interface {
 	GetJobseeker(context.Context, *GetJobSeekerRequest) (*GetJobSeekerResponse, error)
 	GetSkills(context.Context, *GetSkillsRequest) (*GetSkillsResponse, error)
 	GetEmploymentTypes(context.Context, *GetEmploymentTypesRequest) (*GetEmploymentTypesResponse, error)
+	SearchJobseeker(context.Context, *SearchJobSeekerRequest) (*SearchJobResponse, error)
 	mustEmbedUnimplementedJobseeekerServiceServer()
 }
 
@@ -94,6 +105,9 @@ func (UnimplementedJobseeekerServiceServer) GetSkills(context.Context, *GetSkill
 }
 func (UnimplementedJobseeekerServiceServer) GetEmploymentTypes(context.Context, *GetEmploymentTypesRequest) (*GetEmploymentTypesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEmploymentTypes not implemented")
+}
+func (UnimplementedJobseeekerServiceServer) SearchJobseeker(context.Context, *SearchJobSeekerRequest) (*SearchJobResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SearchJobseeker not implemented")
 }
 func (UnimplementedJobseeekerServiceServer) mustEmbedUnimplementedJobseeekerServiceServer() {}
 
@@ -180,6 +194,24 @@ func _JobseeekerService_GetEmploymentTypes_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _JobseeekerService_SearchJobseeker_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SearchJobSeekerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(JobseeekerServiceServer).SearchJobseeker(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/protos.service.JobseeekerService/SearchJobseeker",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(JobseeekerServiceServer).SearchJobseeker(ctx, req.(*SearchJobSeekerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // JobseeekerService_ServiceDesc is the grpc.ServiceDesc for JobseeekerService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -202,6 +234,10 @@ var JobseeekerService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetEmploymentTypes",
 			Handler:    _JobseeekerService_GetEmploymentTypes_Handler,
+		},
+		{
+			MethodName: "SearchJobseeker",
+			Handler:    _JobseeekerService_SearchJobseeker_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

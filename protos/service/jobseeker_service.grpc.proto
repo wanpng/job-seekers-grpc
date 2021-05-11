@@ -13,6 +13,7 @@ service JobseeekerService {
     rpc GetJobseeker(GetJobSeekerRequest) returns (GetJobSeekerResponse);
     rpc GetSkills(GetSkillsRequest) returns (GetSkillsResponse);
     rpc GetEmploymentTypes(GetEmploymentTypesRequest) returns (GetEmploymentTypesResponse);
+    rpc SearchJobseeker(SearchJobSeekerRequest) returns (SearchJobResponse);
 }
 
 enum ApplicationStatus {
@@ -57,4 +58,13 @@ message GetEmploymentTypesRequest {
 
 message GetEmploymentTypesResponse {
     repeated protos.domain.JobSeekerEmploymentType employmentTypes = 1;
+}
+
+message SearchJobSeekerRequest {
+    repeated string jobseeker_ids = 1;
+    string keyword = 2;
+}
+
+message SearchJobResponse {
+    repeated string jobseeker_ids = 1;
 }
