@@ -3,6 +3,9 @@ syntax = "proto3";
 package protos.domain;
 
 option go_package = "github.com/wanpng/job-seekers-profile-grpc/grpc/domain";
+option java_multiple_files = true;
+option java_package = "com.wanpng.jobseeker.grpc.domain";
+option java_outer_classname = "JobSeekerEmploymentTypeProtos";
 
 message JobSeekerEmploymentType {
     // @inject_tag: json:"id" gorm:"column:job_seeker_employment_type_id;primary_key;"
