@@ -29,17 +29,17 @@ public final class JobseekerGrpcProtos {
   static {
     java.lang.String[] descriptorData = {
       "\n\"protos/domain/jobseeker.grpc.proto\022\rpr" +
-      "otos.domain\"\222\002\n\rJobseekerGrpc\022\n\n\002id\030\001 \001(" +
+      "otos.domain\"\241\002\n\rJobseekerGrpc\022\n\n\002id\030\001 \001(" +
       "\t\022\022\n\nfirst_name\030\002 \001(\t\022\021\n\tlast_name\030\003 \001(\t" +
       "\022\021\n\tphoto_url\030\004 \001(\t\022\025\n\ris_land_owner\030\005 \001" +
       "(\010\022\027\n\017career_level_id\030\006 \001(\005\022\024\n\014career_le" +
       "vel\030\007 \001(\t\022\014\n\004city\030\010 \001(\t\022\023\n\013province_id\030\t" +
       " \001(\005\022\020\n\010province\030\n \001(\t\022\027\n\017availability_i" +
       "d\030\013 \001(\005\022\024\n\014availability\030\014 \001(\t\022\021\n\tjob_tit" +
-      "le\030\r \001(\tBq\n com.wanpng.jobseeker.grpc.do" +
-      "mainB\023JobseekerGrpcProtosP\001Z6github.com/" +
-      "wanpng/job-seekers-profile-grpc/grpc/dom" +
-      "ainb\006proto3"
+      "le\030\r \001(\t\022\r\n\005email\030\016 \001(\tBq\n com.wanpng.jo" +
+      "bseeker.grpc.domainB\023JobseekerGrpcProtos" +
+      "P\001Z6github.com/wanpng/job-seekers-profil" +
+      "e-grpc/grpc/domainb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -50,7 +50,7 @@ public final class JobseekerGrpcProtos {
     internal_static_protos_domain_JobseekerGrpc_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_domain_JobseekerGrpc_descriptor,
-        new java.lang.String[] { "Id", "FirstName", "LastName", "PhotoUrl", "IsLandOwner", "CareerLevelId", "CareerLevel", "City", "ProvinceId", "Province", "AvailabilityId", "Availability", "JobTitle", });
+        new java.lang.String[] { "Id", "FirstName", "LastName", "PhotoUrl", "IsLandOwner", "CareerLevelId", "CareerLevel", "City", "ProvinceId", "Province", "AvailabilityId", "Availability", "JobTitle", "Email", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

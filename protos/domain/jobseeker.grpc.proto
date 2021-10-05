@@ -34,4 +34,6 @@ message JobseekerGrpc {
     string availability = 12;
     // @inject_tag: json:"jobTitle"
     string job_title = 13;
+    // @inject_tag: json:"email" gorm:"column:email;"
+    string email = 14;
 }

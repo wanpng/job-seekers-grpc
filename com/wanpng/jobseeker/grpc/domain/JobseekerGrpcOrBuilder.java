@@ -226,4 +226,24 @@ public interface JobseekerGrpcOrBuilder extends
    */
   com.google.protobuf.ByteString
       getJobTitleBytes();
+
+  /**
+   * <pre>
+   * &#64;inject_tag: json:"email" gorm:"column:email;"
+   * </pre>
+   *
+   * <code>string email = 14;</code>
+   * @return The email.
+   */
+  java.lang.String getEmail();
+  /**
+   * <pre>
+   * &#64;inject_tag: json:"email" gorm:"column:email;"
+   * </pre>
+   *
+   * <code>string email = 14;</code>
+   * @return The bytes for email.
+   */
+  com.google.protobuf.ByteString
+      getEmailBytes();
 }
