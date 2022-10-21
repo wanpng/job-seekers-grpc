@@ -704,16 +704,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getFirstNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firstName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, firstName_);
     }
-    if (!getLastNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lastName_);
     }
-    if (!getPhotoUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(photoUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, photoUrl_);
     }
     if (isLandOwner_ != false) {
@@ -722,28 +722,28 @@ private static final long serialVersionUID = 0L;
     if (careerLevelId_ != 0) {
       output.writeInt32(6, careerLevelId_);
     }
-    if (!getCareerLevelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(careerLevel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, careerLevel_);
     }
-    if (!getCityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(city_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, city_);
     }
     if (provinceId_ != 0) {
       output.writeInt32(9, provinceId_);
     }
-    if (!getProvinceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(province_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, province_);
     }
     if (availabilityId_ != 0) {
       output.writeInt32(11, availabilityId_);
     }
-    if (!getAvailabilityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(availability_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, availability_);
     }
-    if (!getJobTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitle_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, jobTitle_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, email_);
     }
     unknownFields.writeTo(output);
@@ -755,16 +755,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getFirstNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firstName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, firstName_);
     }
-    if (!getLastNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lastName_);
     }
-    if (!getPhotoUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(photoUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, photoUrl_);
     }
     if (isLandOwner_ != false) {
@@ -775,30 +775,30 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, careerLevelId_);
     }
-    if (!getCareerLevelBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(careerLevel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, careerLevel_);
     }
-    if (!getCityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(city_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, city_);
     }
     if (provinceId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(9, provinceId_);
     }
-    if (!getProvinceBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(province_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, province_);
     }
     if (availabilityId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(11, availabilityId_);
     }
-    if (!getAvailabilityBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(availability_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, availability_);
     }
-    if (!getJobTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitle_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, jobTitle_);
     }
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, email_);
     }
     size += unknownFields.getSerializedSize();
